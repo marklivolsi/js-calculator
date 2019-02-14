@@ -73,10 +73,10 @@ function switchOperator(symbol) {
 
 function init() {
     document.querySelector('.calculator').addEventListener('click', function (event) {
-        clickedButton(event.target.innerText);
-        console.log(`Buffer: ${buffer}`);
-        // console.log(`runningTotal: ${runningTotal}`);
-        // console.log(`operator: ${operator}`);
+        if (!event.target.classList.contains('screen')) {
+            clickedButton(event.target.innerText);
+            console.log(`Buffer: ${buffer}`);
+        }
     });
 }
 
