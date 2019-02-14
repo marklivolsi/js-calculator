@@ -82,7 +82,6 @@ function init() {
     document.querySelector('.calculator').addEventListener('click', function (event) {
         if (!event.target.classList.contains('screen')) {
             clickedButton(event.target.innerText);
-            console.log(`Buffer: ${buffer}`);
         }
     });
 }
