@@ -9,12 +9,21 @@ function renderScreen(value) {
 
 function clickedButton(buttonValue) {
     if (isNaN(buttonValue)) {
-        // Button was not a number, handle symbol
+        // Button was not a number, handle operator
         clickedOperator(buttonValue);
     } else {
-        // button was a number
+        // Button was a number
+        if (operator === '=') {
+            reset()
+        }
         handleNumber(buttonValue);
     }
+}
+
+function reset() {
+    buffer = '0';
+    operator = null;
+    runningTotal = 0;
 }
 
 function handleNumber(buttonValue) {
@@ -28,9 +37,7 @@ function handleNumber(buttonValue) {
 
 function clickedOperator(buttonValue) {
     if (buttonValue === 'C') {
-        buffer = '0';
-        runningTotal = 0;
-        operator = null;
+        reset();
         renderScreen(buffer);
         return;
     } else if (buttonValue === '←') {
