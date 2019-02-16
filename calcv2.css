@@ -15,6 +15,7 @@ body {
     height: 600px;
     font-family: monospace;
     font-size: 30px;
+    border: 1px solid black;
 }
 
 .screen {
